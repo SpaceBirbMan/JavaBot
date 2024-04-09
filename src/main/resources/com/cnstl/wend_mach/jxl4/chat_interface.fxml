@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="554.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cnstl.wend_mach.jxl4.EvHandlerControllerMain">
+   <children>
+      <AnchorPane prefHeight="71.0" prefWidth="330.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="71.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="330.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fx:id="label_image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="271.0" AnchorPane.topAnchor="13.0">
+               <image>
+                  <Image url="@images.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="chat_name" layoutX="71.0" layoutY="22.0" text="Null" textFill="WHITE" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="71.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="22.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="537.0" prefHeight="45.0" prefWidth="330.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TextArea fx:id="input_area" onKeyPressed="#enterText" prefHeight="45.0" prefWidth="330.0" promptText="Ваш текст отображается здесь" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextArea>
+         </children>
+      </AnchorPane>
+      <ListView fx:id="list_view" layoutY="71.0" prefHeight="466.0" prefWidth="330.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0" />
+      <ScrollPane fx:id="mes_scroll_pane" hbarPolicy="NEVER" prefHeight="466.0" prefWidth="330.0" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0">
+         <content>
+            <AnchorPane minWidth="0.0" prefHeight="435.0" prefWidth="331.0">
+               <children>
+                  <Text fx:id="main_text" layoutX="14.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="302.13671875" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
