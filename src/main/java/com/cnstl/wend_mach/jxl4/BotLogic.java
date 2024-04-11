@@ -30,7 +30,11 @@ public class BotLogic {
     private int helloCount = 0;
     private int goodbyeCount = 0;
 
-    //Функция генерации ответа
+    /**
+     * Генерирует ответ по запросу
+     * @param userInput запрос
+     * @return ответ
+     */
     public String respond(String userInput) {
     //проверять что я у него спросил лучше тут
         userInput = userInput.toLowerCase();
@@ -45,27 +49,42 @@ public class BotLogic {
         else return "Это интересно! Я еще учусь и не могу обсуждать всё, но давайте продолжим разговор.";
     }
 
-    //Проверка на приветствие
+    /**
+     * Приветствие
+     * @param userInput
+     * @return
+     */
     private String hello(String userInput) { //userInput убрать в случае ненадобности
         if (helloCount <= 2)
             return "Доброго времени суток! Чем могу быть полезен?";
         else return "Мы уже здоровались!";
     }
 
-    //Проверка на прощание
-    private String isGoodbye(String userInput) {
+    /**
+     * Прощание
+     * @param userInput
+     * @return
+     */
+    private String isGoodbye(String userInput) { //userInput убрать в случае ненадобности
         if (goodbyeCount <= 1)
             return "Всего доброго! Обращайтесь, если будут ещё вопросы.";
         else return "Мы уже прощались!";
     }
 
-    // Метод для рассказа о возможностях бота
+    /**
+     * Рассказ о возможностях бота
+     * @return
+     */
     private String tellAboutCapabilities() {
         return "Я могу отвечать на приветствия, прощаться, давать текущее время, пинговать хост и генерировать случайные числа.";
     }
 
-    //Вывод валюты
-    private String getValuta(String user_input) {
+    /**
+     * Запрос валюты
+     * @param user_input
+     * @return Валюта по коду
+     */
+    private String getValuta(String user_input) { //userInput убрать в случае ненадобности
         try {
             String url = "https://www.cbr-xml-daily.ru/daily_utf8.xml";
             org.jsoup.nodes.Document document = Jsoup.connect(url).get();
@@ -85,11 +104,11 @@ public class BotLogic {
     }
 
 
-
-
-
-
-    //Проверка на запрос времени
+    /**
+     * Возвращает текущее местнео время
+     * @param userInput
+     * @return
+     */
     private String needTime(String userInput) {
         try {
                 // Создаем подключение к API
@@ -125,7 +144,11 @@ public class BotLogic {
     }
 
 
-    //Проверка на запрос пинга (желательно вводить сайт)
+    /**
+     * Возвращает пинг указанного ip
+     * @param userInput
+     * @return
+     */
     private String needPing(String userInput) {
             try {
                 // Выполняем пинг и измеряем время ответа
@@ -146,7 +169,11 @@ public class BotLogic {
             }
     }
 
-    //Считает цифры
+    /**
+     * Возвращает действительное случайное число
+     * @param userInput
+     * @return
+     */
     double needNumbers(String userInput) {
 
             Random random = new Random();

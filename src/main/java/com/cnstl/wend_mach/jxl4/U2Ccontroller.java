@@ -8,10 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Класс приложения
+ */
 public class U2Ccontroller extends Application {
-    private EvHandlerControllerRegister controller;
+    private EvHandlerControllerRegister controller; // костыль для сохранения данных
 
     @Override
+    // Выполняется при запуске
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(U2Ccontroller.class.getResource("hello-view.fxml"));
         Parent root = loader.load();
@@ -24,6 +28,7 @@ public class U2Ccontroller extends Application {
     }
 
     @Override
+    // Выполняется при закрытии
     public void stop() throws Exception {
         if (controller != null) {
             controller.saveToJson();
@@ -31,6 +36,7 @@ public class U2Ccontroller extends Application {
         super.stop();
     }
 
+    // Запускает приложение
     public static void main(String[] args) {
         launch();
     }
